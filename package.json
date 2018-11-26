@@ -1,0 +1,22 @@
+{
+  "name": "protractorts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^3.3.0",
+    "jasmine": "^3.3.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine2-reporter": "^1.0.1",
+    "jasminewd2": "^2.2.0",
+    "protractor": "^5.4.1",
+    "protractor-beautiful-reporter": "^1.2.7",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
