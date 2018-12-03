@@ -1,7 +1,5 @@
 # git ignore
 
 .idea/
-
-*/node_modules/
-
-*/reports
+node_modules/
+reports
