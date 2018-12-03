@@ -1,0 +1,7 @@
+# git ignore
+
+.idea/
+
+*/node_modules/
+
+*/reports
