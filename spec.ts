@@ -8,7 +8,7 @@ describe('test', ()=>{
     beforeAll( async ()=>{
         await browser.get('http://www.angularjs.org');
         homePage = new HomePage();
-    })
+    });
 
     it('Check inputfield on homepage', async ()=>{
         await homePage.setName('Sander');
