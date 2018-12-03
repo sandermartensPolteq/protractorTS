@@ -1,9 +1,11 @@
-import { ElementFinder, by, element, protractor, promise } from "protractor";
+import {ElementFinder, by, element, protractor, promise, browser} from "protractor";
 
 export class HomePage{
 
-    learnButton: ElementFinder = element(by.xpath('//ul[@class="nav"]/li[@class="dropdown"][1]/a[@class="dropdown-toggle"]'));
-    tutorialButton: ElementFinder = element(by.xpath('//div[@class="navbar-inner"]/div[@class="container"]/ul[@class="nav"]/li[@class="dropdown open"]/ul[@class="dropdown-menu"]/li[1]/a'));
+    navBar: ElementFinder = element(by.id('navbar-main'));
+    navMenu: ElementFinder = element(by.css('ul[class~="nav"]'));
+    learnButton: ElementFinder = this.navBar.element(this.navMenu.locator()).all(by.css('li[class~="dropdown"]')).get(0);
+    tutorialButton: ElementFinder = this.learnButton.all(by.css('ul[class~="dropdown-menu"]')).get(0);
     nameField: ElementFinder = element(by.model('yourName'));
     nameLabel: ElementFinder = element(by.binding('yourName'));
     EC = protractor.ExpectedConditions;
@@ -21,13 +23,15 @@ export class HomePage{
     }
 
     async setName(name:string){
-        await this.EC.presenceOf(this.nameField);
-        this.nameField.sendKeys(name);
+        const elm = this.nameField;
+        await browser.wait(this.EC.presenceOf(elm), 5000);
+        await elm.sendKeys(name);
     }
 
     async getName(){
-        await this.EC.presenceOf(this.nameLabel);
-        return this.nameLabel.getText();
+        const elm = this.nameLabel;
+        await browser.wait(this.EC.presenceOf(elm), 5000);
+        return await elm.getText();
     }
 
 
