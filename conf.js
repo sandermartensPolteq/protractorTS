@@ -6,7 +6,6 @@ global.DEFAULTTIMEOUT = 10000;
 
 exports.config = {
     framework: 'jasmine',
-    chromeDriver: './chromedriver_2.43.exe',
     directConnect: true,
     capabilities: {
         'browserName': 'chrome',
