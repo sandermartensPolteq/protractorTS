@@ -9,13 +9,15 @@ export class HomePage{
     EC = protractor.ExpectedConditions;
 
     async clickLearnButton(){
-        await this.EC.presenceOf(this.learnButton);
-        this.learnButton.click();
+        const elm = this.learnButton;
+        await browser.wait(this.EC.elementToBeClickable(elm), 5000);
+        await elm.click();
     }
 
     async clickTutorialButton(){
-        await this.EC.presenceOf(this.tutorialButton);
-        this.tutorialButton.click();
+        const elm = this.tutorialButton;
+        await browser.wait(this.EC.elementToBeClickable(elm), 5000);
+        await elm.click();
     }
 
     async setName(name:string){
