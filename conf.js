@@ -6,12 +6,9 @@ global.DEFAULTTIMEOUT = 10000;
 
 exports.config = {
     framework: 'jasmine',
-    directConnect: true,
+    directConnect: false,
     capabilities: {
         'browserName': 'chrome',
-        'chromeOptions': {
-            'args': ['--no-sandbox']
-        }
     },
     specs: [
         './spec.ts'
